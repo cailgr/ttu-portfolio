@@ -1,1 +1,317 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio | Texas Tech University</title>
+    <style>
+        /* Typography & Color Palette (Cool Taupe Brown, Cream, and Georgia Font) */
+        :root {
+            --bg-cream: #F9F8F6;
+            --card-cream: #FFFFFF;
+            --text-espresso: #2C2A29;
+            --taupe-accent: #8A8580;
+            --taupe-muted: #E8E6E3;
+            --cool-brown-dark: #4A4744;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: var(--bg-cream);
+            color: var(--text-espresso);
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        /* Navigation */
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--taupe-muted);
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-espresso);
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--taupe-accent);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Hero / Profile Section */
+        .profile-hero {
+            padding: 2rem 0 4rem 0;
+            border-bottom: 1px solid var(--taupe-muted);
+        }
+
+        .university-tag {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--taupe-accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            margin-bottom: 1.5rem;
+            color: var(--cool-brown-dark);
+        }
+
+        .bio-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        /* Future Goals Block */
+        .goals-box {
+            background-color: var(--card-cream);
+            border-left: 4px solid var(--taupe-accent);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            max-width: 800px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .goals-box h3 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            color: var(--cool-brown-dark);
+        }
+
+        /* Section Headers */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin: 4rem 0 2rem 0;
+            color: var(--cool-brown-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Distinct Lab Pages Split View */
+        .labs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        /* Lab Card 1 Theme: Clean Editorial Cream */
+        .lab-card.lab-one {
+            background-color: var(--card-cream);
+            border: 1px solid var(--taupe-muted);
+            padding: 2.5rem;
+            border-top: 5px solid var(--taupe-accent);
+            position: relative;
+        }
+
+        /* Lab Card 2 Theme: Structured Cool-Taupe Minimalist */
+        .lab-card.lab-two {
+            background-color: #F1EFFD; /* Subtle tint adjustment to stay cool-toned */
+            background-color: rgba(138, 133, 128, 0.08); 
+            border: 1px dashed var(--taupe-accent);
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        /* Badge for Leadership Role */
+        .lead-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background-color: var(--cool-brown-dark);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.7rem;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        .lab-card h2 {
+            font-size: 1.6rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            color: var(--text-espresso);
+        }
+
+        .lab-role {
+            font-style: italic;
+            color: var(--taupe-accent);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .lab-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Buttons/Links for Lab Specific Assets */
+        .lab-link {
+            display: inline-block;
+            color: var(--text-espresso);
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px solid var(--text-espresso);
+            padding-bottom: 2px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .lab-link:hover {
+            color: var(--taupe-accent);
+            border-color: var(--taupe-accent);
+        }
+
+        /* Footer */
+        footer {
+            max-width: 1100px;
+            margin: 6rem auto 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--taupe-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--taupe-accent);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--taupe-accent);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-espresso);
+        }
+
+        /* Responsive Layout adjustment */
+        @media (max-width: 768px) {
+            .labs-container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <div class="nav-logo">Academic Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#labs">Research Labs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Webpage Content -->
+    <main id="about">
+        
+        <!-- Profile Section -->
+        <section class="profile-hero">
+            <span class="university-tag">Texas Tech University</span>
+            <h1>Undergraduate Researcher Portfolio</h1>
+            
+            <p class="bio-text">
+                Welcome to my academic space. I am a student investigator at Texas Tech University, dedicated to exploring complex methodologies and data patterns across our scientific divisions. Currently, my academic path combines rigorous course foundations with hands-on responsibilities in multi-disciplinary research lab environments.
+            </p>
+
+            <!-- Post Graduation Goals Block -->
+            <div class="goals-box">
+                <h3>Post-Graduation Pathways</h3>
+                <p>
+                    Following the completion of my degree, I intend to transition into advanced academic research roles and graduate studies. My primary focus points center on translating cross-laboratory workflows into high-impact operational findings.
+                </p>
+            </div>
+        </section>
+
+        <!-- Labs Section -->
+        <section id="labs">
+            <h2 class="section-title">Research Laboratory Affiliations</h2>
+            
+            <div class="labs-container">
+                
+                <!-- Lab One Page Card (LEAD ROLE THEME) -->
+                <article class="lab-card lab-one">
+                    <div class="lead-badge">Lab Lead</div>
+                    <h2>The Primary Research Group</h2>
+                    <span class="lab-role">Lead Undergraduate Researcher</span>
+                    <p>
+                        In this laboratory ecosystem, I manage the underlying organizational framework and oversee data intake metrics. My responsibilities focus on maintaining code standards, managing student workflows, and leading primary structural documentation pipelines.
+                    </p>
+                    <a href="#" class="lab-link">View Documentation Directory &rarr;</a>
+                </article>
+
+                <!-- Lab Two Page Card (DISTINCT MINIMALIST THEME) -->
+                <article class="lab-card lab-two">
+                    <h2>The Secondary Investigative Unit</h2>
+                    <span class="lab-role">Research Affiliate</span>
+                    <p>
+                        Operating within a distinct contextual framework, my position in this laboratory targets deep analytical discovery and execution. Activities include collaborative research modeling, technical logging, and supporting ongoing benchmark testing configurations.
+                    </p>
+                    <a href="#" class="lab-link">View Research Repository &rarr;</a>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Contact Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Academic Portfolio. Built for Raiderlink Web Hosting.</p>
+        <div class="footer-links">
+
