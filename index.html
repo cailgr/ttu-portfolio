@@ -1,317 +1,500 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Portfolio | Texas Tech University</title>
-    <style>
-        /* Typography & Color Palette (Cool Taupe Brown, Cream, and Georgia Font) */
-        :root {
-            --bg-cream: #F9F8F6;
-            --card-cream: #FFFFFF;
-            --text-espresso: #2C2A29;
-            --taupe-accent: #8A8580;
-            --taupe-muted: #E8E6E3;
-            --cool-brown-dark: #4A4744;
-        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+```
+<title>Cailyn Green | Academic Portfolio</title>
 
-        body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            background-color: var(--bg-cream);
-            color: var(--text-espresso);
-            line-height: 1.6;
-            padding: 0;
-        }
+<style>
+    :root {
+        --cream: #F5F3EE;
+        --cream-light: #FBFAF7;
+        --brown: #4A4038;
+        --brown-light: #756A61;
+        --taupe: #B8B0A7;
+        --sage: #7D8979;
+        --sage-light: #E8ECE6;
+        --border: #D8D3CC;
+        --text: #35312E;
+    }
 
-        /* Navigation */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: var(--cream);
+        color: var(--text);
+        line-height: 1.7;
+    }
+
+    /* Navigation */
+    nav {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.8rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+        font-size: 1.15rem;
+        font-weight: normal;
+        letter-spacing: 1px;
+        color: var(--brown);
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--brown-light);
+        font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+        color: var(--sage);
+    }
+
+    /* Main */
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+
+    /* Introduction */
+    .intro {
+        padding: 2rem 0 4rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .university {
+        color: var(--sage);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 0.7rem;
+    }
+
+    h1 {
+        font-size: 3.6rem;
+        font-weight: normal;
+        line-height: 1.15;
+        color: var(--brown);
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+        color: var(--brown-light);
+        margin-bottom: 1.8rem;
+    }
+
+    .intro-text {
+        max-width: 780px;
+        font-size: 1.08rem;
+    }
+
+    /* Career Interest Box */
+    .career-box {
+        margin-top: 2.5rem;
+        max-width: 800px;
+        background-color: var(--cream-light);
+        border-left: 4px solid var(--sage);
+        padding: 1.7rem 2rem;
+    }
+
+    .career-box h2 {
+        font-size: 1.2rem;
+        font-weight: normal;
+        color: var(--brown);
+        margin-bottom: 0.6rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Sections */
+    section {
+        scroll-margin-top: 30px;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+        font-weight: normal;
+        color: var(--brown);
+        margin: 4rem 0 1.8rem;
+    }
+
+    .section-intro {
+        max-width: 750px;
+        color: var(--brown-light);
+        margin-bottom: 2rem;
+    }
+
+    /* Research Cards */
+    .research-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .research-card {
+        background-color: var(--cream-light);
+        border: 1px solid var(--border);
+        padding: 2.2rem;
+    }
+
+    .research-card.star {
+        border-top: 4px solid var(--brown);
+    }
+
+    .research-card.care {
+        border-top: 4px solid var(--sage);
+    }
+
+    .lab-name {
+        font-size: 1.45rem;
+        font-weight: normal;
+        color: var(--brown);
+        margin-bottom: 0.3rem;
+    }
+
+    .role {
+        color: var(--brown-light);
+        font-style: italic;
+        margin-bottom: 1.3rem;
+        display: block;
+    }
+
+    .research-card p {
+        margin-bottom: 1rem;
+    }
+
+    .research-card ul {
+        margin: 1rem 0 0 1.2rem;
+    }
+
+    .research-card li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Skills */
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 3rem;
+        max-width: 850px;
+    }
+
+    .skill {
+        border-bottom: 1px solid var(--border);
+        padding: 0.9rem 0;
+        color: var(--text);
+    }
+
+    /* Career Goals */
+    .career-section {
+        background-color: var(--sage-light);
+        border: 1px solid #D7DDD4;
+        padding: 2.5rem;
+        margin-top: 1rem;
+        max-width: 850px;
+    }
+
+    .career-section h3 {
+        font-size: 1.35rem;
+        font-weight: normal;
+        color: var(--brown);
+        margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        max-width: 1100px;
+        margin: 5rem auto 0;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        color: var(--brown-light);
+        font-size: 0.9rem;
+    }
+
+    footer a {
+        color: var(--brown);
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        color: var(--sage);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+
         nav {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--taupe-muted);
-        }
-
-        .nav-logo {
-            font-size: 1.25rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
         }
 
         .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-espresso);
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--taupe-accent);
-        }
-
-        /* Main Container */
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        /* Hero / Profile Section */
-        .profile-hero {
-            padding: 2rem 0 4rem 0;
-            border-bottom: 1px solid var(--taupe-muted);
-        }
-
-        .university-tag {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--taupe-accent);
-            margin-bottom: 0.5rem;
-            display: block;
+            gap: 1.2rem;
+            flex-wrap: wrap;
         }
 
         h1 {
-            font-size: 3rem;
-            font-weight: normal;
-            margin-bottom: 1.5rem;
-            color: var(--cool-brown-dark);
+            font-size: 2.7rem;
         }
 
-        .bio-text {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin-bottom: 2rem;
+        .research-grid {
+            grid-template-columns: 1fr;
         }
 
-        /* Future Goals Block */
-        .goals-box {
-            background-color: var(--card-cream);
-            border-left: 4px solid var(--taupe-accent);
-            padding: 1.5rem;
-            margin-top: 2rem;
-            max-width: 800px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        .skills-container {
+            grid-template-columns: 1fr;
         }
 
-        .goals-box h3 {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            color: var(--cool-brown-dark);
-        }
-
-        /* Section Headers */
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: normal;
-            margin: 4rem 0 2rem 0;
-            color: var(--cool-brown-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Distinct Lab Pages Split View */
-        .labs-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-        }
-
-        /* Lab Card 1 Theme: Clean Editorial Cream */
-        .lab-card.lab-one {
-            background-color: var(--card-cream);
-            border: 1px solid var(--taupe-muted);
-            padding: 2.5rem;
-            border-top: 5px solid var(--taupe-accent);
-            position: relative;
-        }
-
-        /* Lab Card 2 Theme: Structured Cool-Taupe Minimalist */
-        .lab-card.lab-two {
-            background-color: #F1EFFD; /* Subtle tint adjustment to stay cool-toned */
-            background-color: rgba(138, 133, 128, 0.08); 
-            border: 1px dashed var(--taupe-accent);
-            padding: 2.5rem;
-            position: relative;
-        }
-
-        /* Badge for Leadership Role */
-        .lead-badge {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background-color: var(--cool-brown-dark);
-            color: #FFFFFF;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.3rem 0.7rem;
-            font-family: sans-serif;
-            font-weight: bold;
-        }
-
-        .lab-card h2 {
-            font-size: 1.6rem;
-            font-weight: normal;
-            margin-bottom: 0.5rem;
-            color: var(--text-espresso);
-        }
-
-        .lab-role {
-            font-style: italic;
-            color: var(--taupe-accent);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .lab-card p {
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        /* Buttons/Links for Lab Specific Assets */
-        .lab-link {
-            display: inline-block;
-            color: var(--text-espresso);
-            font-weight: bold;
-            text-decoration: none;
-            border-bottom: 1px solid var(--text-espresso);
-            padding-bottom: 2px;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-        }
-
-        .lab-link:hover {
-            color: var(--taupe-accent);
-            border-color: var(--taupe-accent);
-        }
-
-        /* Footer */
         footer {
-            max-width: 1100px;
-            margin: 6rem auto 0 auto;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid var(--taupe-muted);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            color: var(--taupe-accent);
+            flex-direction: column;
+            gap: 0.5rem;
         }
+    }
+</style>
+```
 
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-links a {
-            color: var(--taupe-accent);
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-espresso);
-        }
-
-        /* Responsive Layout adjustment */
-        @media (max-width: 768px) {
-            .labs-container {
-                grid-template-columns: 1fr;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
 </head>
+
 <body>
 
-    <!-- Header Navigation -->
-    <nav>
-        <div class="nav-logo">Academic Portfolio</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#labs">Research Labs</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+```
+<!-- Navigation -->
+<nav>
 
-    <!-- Main Webpage Content -->
-    <main id="about">
-        
-        <!-- Profile Section -->
-        <section class="profile-hero">
-            <span class="university-tag">Texas Tech University</span>
-            <h1>Undergraduate Researcher Portfolio</h1>
-            
-            <p class="bio-text">
-                Welcome to my academic space. I am a student investigator at Texas Tech University, dedicated to exploring complex methodologies and data patterns across our scientific divisions. Currently, my academic path combines rigorous course foundations with hands-on responsibilities in multi-disciplinary research lab environments.
+    <div class="nav-logo">
+        Cailyn Green
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#goals">Career Goals</a></li>
+    </ul>
+
+</nav>
+
+
+<main>
+
+    <!-- About Section -->
+    <section class="intro" id="about">
+
+        <div class="university">
+            Texas Tech University
+        </div>
+
+        <h1>Cailyn Green</h1>
+
+        <div class="subtitle">
+            Human Development and Family Sciences Student & Undergraduate Researcher
+        </div>
+
+        <p class="intro-text">
+            I am an undergraduate student at Texas Tech University studying Human Development and Family Sciences with a minor in Community, Family, and Addiction Sciences. Through my research experiences, I have developed an interest in research coordination, administrative support, organization, and work that helps research teams operate effectively.
+        </p>
+
+
+        <div class="career-box">
+
+            <h2>What I Am Interested In</h2>
+
+            <p>
+                I am interested in opportunities that combine research, organization, communication, and administrative work. I enjoy helping projects stay organized, supporting research teams, and working on the processes that help studies and programs run smoothly.
             </p>
 
-            <!-- Post Graduation Goals Block -->
-            <div class="goals-box">
-                <h3>Post-Graduation Pathways</h3>
+        </div>
+
+    </section>
+
+
+    <!-- Research Experience -->
+    <section id="research">
+
+        <h2 class="section-title">
+            Research Experience
+        </h2>
+
+        <p class="section-intro">
+            My undergraduate research experiences have allowed me to work with different research teams while developing skills in organization, participant communication, documentation, and research support.
+        </p>
+
+
+        <div class="research-grid">
+
+            <!-- STAR Lab -->
+            <article class="research-card star">
+
+                <h3 class="lab-name">
+                    Stress, Aging, and Relationships (STAR) Lab
+                </h3>
+
+                <span class="role">
+                    Lead Undergraduate Research Assistant
+                </span>
+
                 <p>
-                    Following the completion of my degree, I intend to transition into advanced academic research roles and graduate studies. My primary focus points center on translating cross-laboratory workflows into high-impact operational findings.
+                    In the STAR Lab, I support research operations and help organize processes for undergraduate researchers and ongoing studies.
                 </p>
+
+                <ul>
+                    <li>Developing standard operating procedures for undergraduate research assistants</li>
+
+                    <li>Supporting study setup and research documentation</li>
+
+                    <li>Creating participant resources and research materials</li>
+
+                    <li>Assisting with REDCap and sociodemographic measures</li>
+
+                    <li>Organizing research processes and day-to-day lab operations</li>
+
+                    <li>Supporting other undergraduate research assistants</li>
+                </ul>
+
+            </article>
+
+
+            <!-- CARE Lab -->
+            <article class="research-card care">
+
+                <h3 class="lab-name">
+                    Child, Adolescent, Resilience, & Ecology (CARE) Lab
+                </h3>
+
+                <span class="role">
+                    Undergraduate Research Assistant
+                </span>
+
+                <p>
+                    In the CARE Lab, I am developing experience with participant communication and the research process through assisting with study consent calls.
+                </p>
+
+                <ul>
+                    <li>Assisting with participant consent calls</li>
+
+                    <li>Communicating study information clearly and professionally</li>
+
+                    <li>Following research protocols during participant interactions</li>
+
+                    <li>Developing experience with participant-facing research activities</li>
+                </ul>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2 class="section-title">
+            Skills & Areas of Experience
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                Research Coordination & Support
             </div>
-        </section>
 
-        <!-- Labs Section -->
-        <section id="labs">
-            <h2 class="section-title">Research Laboratory Affiliations</h2>
-            
-            <div class="labs-container">
-                
-                <!-- Lab One Page Card (LEAD ROLE THEME) -->
-                <article class="lab-card lab-one">
-                    <div class="lead-badge">Lab Lead</div>
-                    <h2>The Primary Research Group</h2>
-                    <span class="lab-role">Lead Undergraduate Researcher</span>
-                    <p>
-                        In this laboratory ecosystem, I manage the underlying organizational framework and oversee data intake metrics. My responsibilities focus on maintaining code standards, managing student workflows, and leading primary structural documentation pipelines.
-                    </p>
-                    <a href="#" class="lab-link">View Documentation Directory &rarr;</a>
-                </article>
-
-                <!-- Lab Two Page Card (DISTINCT MINIMALIST THEME) -->
-                <article class="lab-card lab-two">
-                    <h2>The Secondary Investigative Unit</h2>
-                    <span class="lab-role">Research Affiliate</span>
-                    <p>
-                        Operating within a distinct contextual framework, my position in this laboratory targets deep analytical discovery and execution. Activities include collaborative research modeling, technical logging, and supporting ongoing benchmark testing configurations.
-                    </p>
-                    <a href="#" class="lab-link">View Research Repository &rarr;</a>
-                </article>
-
+            <div class="skill">
+                Administrative Organization
             </div>
-        </section>
 
-    </main>
+            <div class="skill">
+                Research Documentation
+            </div>
 
-    <!-- Contact Footer -->
-    <footer id="contact">
-        <p>&copy; 2026 Academic Portfolio. Built for Raiderlink Web Hosting.</p>
-        <div class="footer-links">
+            <div class="skill">
+                Standard Operating Procedures
+            </div>
 
+            <div class="skill">
+                Participant Communication
+            </div>
+
+            <div class="skill">
+                Professional Communication
+            </div>
+
+            <div class="skill">
+                REDCap
+            </div>
+
+            <div class="skill">
+                Microsoft Office & Google Workspace
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Career Goals -->
+    <section id="goals">
+
+        <h2 class="section-title">
+            Career Goals
+        </h2>
+
+        <div class="career-section">
+
+            <h3>
+                Where I Hope to Go After Graduation
+            </h3>
+
+            <p>
+                After graduation, I am interested in research coordination, research administration, program coordination, and other administrative roles where I can use my research and organizational experience. I want to continue building on the skills I have developed through my undergraduate research experiences while contributing to work that supports people, programs, and research teams.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>
+        © 2026 Cailyn Green
+    </p>
+
+    <a href="mailto:cailgree@ttu.edu">
+        Contact
+    </a>
+
+</footer>
+```
+
+</body>
+</html>
